@@ -648,6 +648,7 @@ export abstract class AbstractSqlDriver<C extends AbstractSqlConnection = Abstra
         .forEach(prop => ret.push(prop.name));
     }
 
+    console.log('BUILD FIELDS', ret);
     return ret.length > 0 ? ret : ['*'];
   }
 

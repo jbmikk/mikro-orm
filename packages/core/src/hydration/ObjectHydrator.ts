@@ -76,6 +76,7 @@ export class ObjectHydrator extends Hydrator {
       const preCond = preCondition(dataKey);
       const convertorKey = path.join('_');
       const ret: string[] = [];
+      console.log('SCALAR HYDRATOR', prop.name, prop.customType, convertorKey);
 
       if (prop.reference === ReferenceType.EMBEDDED) {
         context.set(`prototype_${convertorKey}`, prop.embeddable.prototype);
@@ -205,6 +206,7 @@ export class ObjectHydrator extends Hydrator {
     const hydrator = Utils.createFunction(context, code);
     this.hydrators[type].set(meta.className, hydrator);
 
+    console.log('ENTITY HYDRATOR', meta.className, type, hydrator);
     return hydrator;
   }
 

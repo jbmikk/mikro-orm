@@ -722,6 +722,7 @@ export class Utils {
 
   /* istanbul ignore next */
   static createFunction(context: Map<string, any>, code: string) {
+    console.log('CREATE FUN', code, context);
     try {
       return new Function(...context.keys(), code)(...context.values());
     } catch (e) {

@@ -39,6 +39,7 @@ export class EntityAssigner {
       const customType = props[prop]?.customType;
 
       if (options.convertCustomTypes && customType && props[prop].reference === ReferenceType.SCALAR && !Utils.isEntity(data)) {
+        console.log('CONVERT', prop, value);
         value = props[prop].customType.convertToJSValue(value, entity.__platform);
       }
 

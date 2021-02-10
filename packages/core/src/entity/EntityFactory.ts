@@ -108,6 +108,7 @@ export class EntityFactory {
   }
 
   private hydrate<T>(entity: T, meta: EntityMetadata<T>, data: EntityData<T>, options: FactoryOptions): void {
+    console.log('HYDRATE');
     if (options.initialized) {
       this.hydrator.hydrate(entity, meta, data, this, 'full', options.newEntity, options.convertCustomTypes);
     } else {
